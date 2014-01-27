@@ -72,3 +72,18 @@ config route
 	option gateway	192.168.5.2
 	option interface wan
 
+# Basic OpenVSwitch
+config device
+        option type	ovs
+        option name	br-ovs
+        option ifname	eth0
+        option ovs_empty 1
+
+# Pseudo bridge on top of br-ovs (vlan 1000)
+config device
+        option type ovs
+        option name br-ovs1000
+        option ovs_tag 1000
+        option ovs_base br-ovs
+        option ifname eth1
+
