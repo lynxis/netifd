@@ -45,7 +45,7 @@ static char *system_get_ovs(const char *name)
 		return NULL;
 	c = fgets(dev, sizeof(dev), f);
 	if (c) {
-		c2 = strchr(c, '\n')
+		c2 = strchr(c, '\n');
 		if (c2)
 			*c2 = '\0';
 	}
