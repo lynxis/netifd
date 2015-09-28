@@ -122,8 +122,9 @@ proto_add_ipv4_route() {
 	local gw="$3"
 	local source="$4"
 	local metric="$5"
+	local table="$6"
 
-	append PROTO_ROUTE "$target/$mask/$gw/$metric///$source"
+	append PROTO_ROUTE "$target/$mask/$gw/$metric//$table/$source"
 }
 
 proto_add_ipv6_route() {
